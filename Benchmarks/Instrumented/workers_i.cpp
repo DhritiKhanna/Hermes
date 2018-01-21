@@ -1,3 +1,5 @@
+#include "/home/dhriti/Dropbox/mopperExtension/clangTool/GenerateAssumes.h"
+ProcessIfs* ifs = new ProcessIfs();
 #include <mpi.h>
 #include <stdlib.h>
 #include <stdio.h>
@@ -25,7 +27,6 @@ int is_prime(int n) {
 
 void manager(int workers, int limit, int size) {
 	MPI_Status status;
-	std::cout << "limit: " << limit << " size: " << size << "\n";
 	int processed = 0;
 	int finished = 0;
 	int *result = (int*) malloc(sizeof(int) * size / 2);
@@ -39,22 +40,18 @@ void manager(int workers, int limit, int size) {
 		data[0] = size * i + 1;
 		data[1] = size * (i + 1);
 		MPI_Send(data, 2, MPI_INT, i, INTERVAL, MPI_COMM_WORLD);
-		std::cout << "\nSending work to the client " << i << "\n";
 		processed++;
-		std::cout << "\nprocessed: " << processed << "; limit div size: " << limit/size << "\n";
 	}
 
 	while(finished < workers - 1) {
 		MPI_Recv(result, size / 2, MPI_INT, MPI_ANY_SOURCE, RESULTS, MPI_COMM_WORLD, &status);
 		if (processed >= limit / size) {
 			MPI_Send(data, 0, MPI_INT, status.MPI_SOURCE, FINISH, MPI_COMM_WORLD);
-			std::cout << "\nSending finish to the client " << status.MPI_SOURCE << "\n";
 			finished++;
 		} else {
 			data[0] = size * processed + 1;
 			data[1] = size * (processed + 1);
 			MPI_Send(data, 2, MPI_INT, status.MPI_SOURCE, INTERVAL, MPI_COMM_WORLD);
-			std::cout << "\nSending work to the client " << status.MPI_SOURCE << "\n";
 			processed++;
 		}
 	}
@@ -75,9 +72,9 @@ void worker(int size) {
 					primes[j++] = i;
 				}
 			}
-			MPI_Send(primes, j, MPI_INT, 0, RESULTS, MPI_COMM_WORLD);
+			ifs->storeInfo("status.MPI_TAG",bo_eq,1,68,75,67,75); MPI_Send(primes, j, MPI_INT, 0, RESULTS, MPI_COMM_WORLD);
 		} else {
-			break;
+			ifs->storeInfo("status.MPI_TAG",bo_eq,status.MPI_TAG,76,77,67,-1); break;
 		}
 	}
 	free(primes);
@@ -86,7 +83,7 @@ void worker(int size) {
 
 int main(int argc, char **argv)
 {
-	MPI_Init(&argc, &argv);
+	MPI_Init(&argc, &argv);int my_rank; MPI_Comm_rank(MPI_COMM_WORLD, &my_rank);
 	int rank;
 	MPI_Comm_rank(MPI_COMM_WORLD, &rank);
 	int workers;
@@ -102,7 +99,6 @@ int main(int argc, char **argv)
 			fprintf(stderr, "invalid first argument\n");
 			return 0;
 		}
-		else { std::cout << "limit: " << size << "\n"; }
 		if (sscanf(argv[2], "%d", &size) < 0) {
 			fprintf(stderr, "invalid second argument\n");
 			return 0;
@@ -115,6 +111,6 @@ int main(int argc, char **argv)
 		MPI_Bcast(&size, 1, MPI_INT, 0, MPI_COMM_WORLD);
 		worker(size);
 	}
-	MPI_Finalize();
+	MPI_Finalize();ifs->transferInfoToScheduler(my_rank);
 	return 0;
 }

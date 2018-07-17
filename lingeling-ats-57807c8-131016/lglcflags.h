@@ -1,0 +1,2 @@
+#define LGL_CC "gcc (Ubuntu 4.9.3-8ubuntu2~14.04) 4.9.3"
+#define LGL_CFLAGS "-Wall -O3 -DNDBLSCR -DNLGLOG -DNDEBUG -DNCHKSOL -DNLGLPICOSAT"

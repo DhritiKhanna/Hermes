@@ -1,0 +1,752 @@
+-----------------------------------------
+pi =  3.10666666666666646535
+points: 1500
+in: 1165, out: 335, <ret> to exit
+INTERLEAVING :1
+	ample_set: 1
+		 [0, 0] [1, 0] [2, 0] [3, 0]
+			o=1 i=0 rank=0 Bcast ../clangTool/Modified.cpp:36 count=0
+			o=2 i=0 rank=1 Bcast ../clangTool/Modified.cpp:36 count=0
+			o=3 i=0 rank=2 Bcast ../clangTool/Modified.cpp:36 count=0
+			o=4 i=0 rank=3 Bcast ../clangTool/Modified.cpp:36 count=0
+	choice: [0, 0] [1, 0] [2, 0] [3, 0]
+	ample_set: 1
+		 [0, 1] [1, 1] [2, 1] [3, 1]
+			o=5 i=1 rank=0 Comm_create ../clangTool/Modified.cpp:40 count=1
+			o=6 i=1 rank=1 Comm_create ../clangTool/Modified.cpp:40 count=1
+			o=7 i=1 rank=2 Comm_create ../clangTool/Modified.cpp:40 count=1
+			o=8 i=1 rank=3 Comm_create ../clangTool/Modified.cpp:40 count=1
+	choice: [0, 1] [1, 1] [2, 1] [3, 1]
+	ample_set: 3
+		 [0, 2] [3, 2]
+		 [1, 2] [3, 2]
+		 [2, 2] [3, 2]
+			o=9 i=2 rank=0 Send ../clangTool/Modified.cpp:63 dest=3 stag=1
+			o=12 i=2 rank=3 Recv ../clangTool/Modified.cpp:46 src=-1 rtag=1
+			o=10 i=2 rank=1 Send ../clangTool/Modified.cpp:63 dest=3 stag=1
+			o=12 i=2 rank=3 Recv ../clangTool/Modified.cpp:46 src=-1 rtag=1
+			o=11 i=2 rank=2 Send ../clangTool/Modified.cpp:63 dest=3 stag=1
+			o=12 i=2 rank=3 Recv ../clangTool/Modified.cpp:46 src=-1 rtag=1
+	choice: [0, 2] [3, 2]
+	ample_set: 1
+		 [3, 3] [0, 3]
+			o=14 i=3 rank=3 Send ../clangTool/Modified.cpp:54 dest=0 stag=2
+			o=13 i=3 rank=0 Recv ../clangTool/Modified.cpp:69 src=3 rtag=2
+	choice: [3, 3] [0, 3]
+	ample_set: 2
+		 [1, 2] [3, 4]
+		 [2, 2] [3, 4]
+			o=10 i=2 rank=1 Send ../clangTool/Modified.cpp:63 dest=3 stag=1
+			o=16 i=4 rank=3 Recv ../clangTool/Modified.cpp:46 src=-1 rtag=1
+			o=11 i=2 rank=2 Send ../clangTool/Modified.cpp:63 dest=3 stag=1
+			o=16 i=4 rank=3 Recv ../clangTool/Modified.cpp:46 src=-1 rtag=1
+	choice: [1, 2] [3, 4]
+	ample_set: 1
+		 [3, 5] [1, 3]
+			o=18 i=5 rank=3 Send ../clangTool/Modified.cpp:54 dest=1 stag=2
+			o=17 i=3 rank=1 Recv ../clangTool/Modified.cpp:69 src=3 rtag=2
+	choice: [3, 5] [1, 3]
+	ample_set: 1
+		 [2, 2] [3, 6]
+			o=11 i=2 rank=2 Send ../clangTool/Modified.cpp:63 dest=3 stag=1
+			o=20 i=6 rank=3 Recv ../clangTool/Modified.cpp:46 src=-1 rtag=1
+	choice: [2, 2] [3, 6]
+	ample_set: 1
+		 [3, 7] [2, 3]
+			o=22 i=7 rank=3 Send ../clangTool/Modified.cpp:54 dest=2 stag=2
+			o=21 i=3 rank=2 Recv ../clangTool/Modified.cpp:69 src=3 rtag=2
+	choice: [3, 7] [2, 3]
+	ample_set: 1
+		 [0, 4] [1, 4] [2, 4]
+			o=15 i=4 rank=0 Allreduce ../clangTool/Modified.cpp:78 count=1
+			o=19 i=4 rank=1 Allreduce ../clangTool/Modified.cpp:78 count=1
+			o=23 i=4 rank=2 Allreduce ../clangTool/Modified.cpp:78 count=1
+	choice: [0, 4] [1, 4] [2, 4]
+	ample_set: 1
+		 [0, 5] [1, 5] [2, 5]
+			o=25 i=5 rank=0 Allreduce ../clangTool/Modified.cpp:79 count=2
+			o=26 i=5 rank=1 Allreduce ../clangTool/Modified.cpp:79 count=2
+			o=27 i=5 rank=2 Allreduce ../clangTool/Modified.cpp:79 count=2
+	choice: [0, 5] [1, 5] [2, 5]
+	ample_set: 1
+		 [0, 6] [3, 8]
+			o=28 i=6 rank=0 Send ../clangTool/Modified.cpp:86 dest=3 stag=1
+			o=24 i=8 rank=3 Recv ../clangTool/Modified.cpp:46 src=-1 rtag=1
+	choice: [0, 6] [3, 8]
+	ample_set: 1
+		 [0, 7] [1, 6] [2, 6]
+			o=31 i=7 rank=0 Comm_free ../clangTool/Modified.cpp:93 count=1
+			o=29 i=6 rank=1 Comm_free ../clangTool/Modified.cpp:93 count=1
+			o=30 i=6 rank=2 Comm_free ../clangTool/Modified.cpp:93 count=1
+	choice: [0, 7] [1, 6] [2, 6]
+	ample_set: 1
+		 [0, 8] [1, 7] [2, 7] [3, 9]
+			o=33 i=8 rank=0 Finalize ../clangTool/Modified.cpp:101
+			o=34 i=7 rank=1 Finalize ../clangTool/Modified.cpp:101
+			o=35 i=7 rank=2 Finalize ../clangTool/Modified.cpp:101
+			o=32 i=9 rank=3 Finalize ../clangTool/Modified.cpp:101
+	choice: [0, 8] [1, 7] [2, 7] [3, 9]
+
+Executing the SMT encoding
+
+Line numbers are: 
+**********MATCHSET*************
+MatchSet Size =22
+[0, 0][1, 0][2, 0][3, 0]
+[0, 1][1, 1][2, 1][3, 1]
+[1, 2][3, 4]
+[0, 4][1, 4][2, 4]
+[0, 5][1, 5][2, 5]
+[0, 7][1, 6][2, 6]
+[0, 2][3, 2]
+[0, 2][3, 4]
+[0, 2][3, 6]
+[3, 3][0, 3]
+[1, 2][3, 2]
+[1, 2][3, 6]
+[1, 2][3, 8]
+[3, 5][1, 3]
+[2, 2][3, 6]
+[2, 2][3, 4]
+[2, 2][3, 2]
+[2, 2][3, 8]
+[3, 7][2, 3]
+[0, 6][3, 8]
+[0, 6][3, 6]
+[0, 6][3, 4]
+
+Create Event Covers
+Partial Order Constraints
+Match Collectives
+Match Pairs
+Unique Match Send
+Unique Match Receive
+RF Some Constraint
+Matched Only
+Match Implies Issued
+All Ancestors Matched
+No More Matches Possible
+Not All Matched
+Conditionals of this branch: (= R_3_2_12_46_data 1)
+
+Conditionals of this branch: (= R_3_2_12_46_data 1)
+
+Conditionals of this branch: (= R_3_2_12_46_data 1)
+SAT: DEADLOCK DETECTED
+(declare-fun S_0_2_9_63_dest () Int)
+(declare-fun S_0_2_9_63_tag () Int)
+(declare-fun R_0_3_13_69_src () Int)
+(declare-fun R_0_3_13_69_tag () Int)
+(declare-fun S_0_6_28_86_dest () Int)
+(declare-fun S_0_6_28_86_tag () Int)
+(declare-fun S_1_2_10_63_dest () Int)
+(declare-fun S_1_2_10_63_tag () Int)
+(declare-fun R_1_3_17_69_src () Int)
+(declare-fun R_1_3_17_69_tag () Int)
+(declare-fun S_2_2_11_63_dest () Int)
+(declare-fun S_2_2_11_63_tag () Int)
+(declare-fun R_2_3_21_69_src () Int)
+(declare-fun R_2_3_21_69_tag () Int)
+(declare-fun R_3_2_12_46_tag () Int)
+(declare-fun S_3_3_14_54_dest () Int)
+(declare-fun S_3_3_14_54_tag () Int)
+(declare-fun R_3_4_16_46_tag () Int)
+(declare-fun S_3_5_18_54_dest () Int)
+(declare-fun S_3_5_18_54_tag () Int)
+(declare-fun R_3_6_20_46_tag () Int)
+(declare-fun S_3_7_22_54_dest () Int)
+(declare-fun S_3_7_22_54_tag () Int)
+(declare-fun R_3_8_24_46_tag () Int)
+(declare-fun |Partial Order Constraints| () Bool)
+(declare-fun C_0_1_5_40_clk () Int)
+(declare-fun C_0_0_1_36_clk () Int)
+(declare-fun S_0_2_9_63_clk () Int)
+(declare-fun R_0_3_13_69_clk () Int)
+(declare-fun C_0_4_15_78_clk () Int)
+(declare-fun C_0_5_25_79_clk () Int)
+(declare-fun S_0_6_28_86_clk () Int)
+(declare-fun C_0_7_31_93_clk () Int)
+(declare-fun C_1_1_6_40_clk () Int)
+(declare-fun C_1_0_2_36_clk () Int)
+(declare-fun S_1_2_10_63_clk () Int)
+(declare-fun R_1_3_17_69_clk () Int)
+(declare-fun C_1_4_19_78_clk () Int)
+(declare-fun C_1_5_26_79_clk () Int)
+(declare-fun C_1_6_29_93_clk () Int)
+(declare-fun C_2_1_7_40_clk () Int)
+(declare-fun C_2_0_3_36_clk () Int)
+(declare-fun S_2_2_11_63_clk () Int)
+(declare-fun R_2_3_21_69_clk () Int)
+(declare-fun C_2_4_23_78_clk () Int)
+(declare-fun C_2_5_27_79_clk () Int)
+(declare-fun C_2_6_30_93_clk () Int)
+(declare-fun C_3_1_8_40_clk () Int)
+(declare-fun C_3_0_4_36_clk () Int)
+(declare-fun R_3_2_12_46_clk () Int)
+(declare-fun S_3_3_14_54_clk () Int)
+(declare-fun R_3_4_16_46_clk () Int)
+(declare-fun S_3_5_18_54_clk () Int)
+(declare-fun R_3_6_20_46_clk () Int)
+(declare-fun S_3_7_22_54_clk () Int)
+(declare-fun R_3_8_24_46_clk () Int)
+(declare-fun |Match Collectives| () Bool)
+(declare-fun |Match Pairs| () Bool)
+(declare-fun R_3_4_16_46_src () Int)
+(declare-fun R_3_2_12_46_src () Int)
+(declare-fun R_3_6_20_46_src () Int)
+(declare-fun R_3_8_24_46_src () Int)
+(declare-fun |Unique Match Send| () Bool)
+(declare-fun s_1232 () Bool)
+(declare-fun s_1234 () Bool)
+(declare-fun s_1236 () Bool)
+(declare-fun s_1238 () Bool)
+(declare-fun s_0234 () Bool)
+(declare-fun s_0232 () Bool)
+(declare-fun s_0236 () Bool)
+(declare-fun s_2232 () Bool)
+(declare-fun s_2236 () Bool)
+(declare-fun s_2234 () Bool)
+(declare-fun s_2238 () Bool)
+(declare-fun s_0634 () Bool)
+(declare-fun s_0638 () Bool)
+(declare-fun s_0636 () Bool)
+(declare-fun |Unique Match Receive| () Bool)
+(declare-fun |RF Some Constraint| () Bool)
+(declare-fun S_0_2_9_63_m () Bool)
+(declare-fun s_3303 () Bool)
+(declare-fun R_0_3_13_69_m () Bool)
+(declare-fun S_0_6_28_86_m () Bool)
+(declare-fun S_1_2_10_63_m () Bool)
+(declare-fun s_3513 () Bool)
+(declare-fun R_1_3_17_69_m () Bool)
+(declare-fun S_2_2_11_63_m () Bool)
+(declare-fun s_3723 () Bool)
+(declare-fun R_2_3_21_69_m () Bool)
+(declare-fun R_3_2_12_46_m () Bool)
+(declare-fun S_3_3_14_54_m () Bool)
+(declare-fun R_3_4_16_46_m () Bool)
+(declare-fun S_3_5_18_54_m () Bool)
+(declare-fun R_3_6_20_46_m () Bool)
+(declare-fun S_3_7_22_54_m () Bool)
+(declare-fun R_3_8_24_46_m () Bool)
+(declare-fun |Matched only| () Bool)
+(declare-fun |Match Implies Issued| () Bool)
+(declare-fun S_0_2_9_63_i () Bool)
+(declare-fun R_0_3_13_69_i () Bool)
+(declare-fun S_0_6_28_86_i () Bool)
+(declare-fun S_1_2_10_63_i () Bool)
+(declare-fun R_1_3_17_69_i () Bool)
+(declare-fun S_2_2_11_63_i () Bool)
+(declare-fun R_2_3_21_69_i () Bool)
+(declare-fun R_3_2_12_46_i () Bool)
+(declare-fun S_3_3_14_54_i () Bool)
+(declare-fun R_3_4_16_46_i () Bool)
+(declare-fun S_3_5_18_54_i () Bool)
+(declare-fun R_3_6_20_46_i () Bool)
+(declare-fun S_3_7_22_54_i () Bool)
+(declare-fun R_3_8_24_46_i () Bool)
+(declare-fun C_3_0_4_36_i () Bool)
+(declare-fun C_2_0_3_36_i () Bool)
+(declare-fun C_1_0_2_36_i () Bool)
+(declare-fun C_0_0_1_36_i () Bool)
+(declare-fun C_0_0_1_36_m () Bool)
+(declare-fun C_3_1_8_40_i () Bool)
+(declare-fun C_2_1_7_40_i () Bool)
+(declare-fun C_1_1_6_40_i () Bool)
+(declare-fun C_0_1_5_40_i () Bool)
+(declare-fun C_0_1_5_40_m () Bool)
+(declare-fun C_2_4_23_78_i () Bool)
+(declare-fun C_1_4_19_78_i () Bool)
+(declare-fun C_0_4_15_78_i () Bool)
+(declare-fun C_0_4_15_78_m () Bool)
+(declare-fun C_2_5_27_79_i () Bool)
+(declare-fun C_1_5_26_79_i () Bool)
+(declare-fun C_0_5_25_79_i () Bool)
+(declare-fun C_0_5_25_79_m () Bool)
+(declare-fun C_2_6_30_93_i () Bool)
+(declare-fun C_1_6_29_93_i () Bool)
+(declare-fun C_0_7_31_93_i () Bool)
+(declare-fun C_0_7_31_93_m () Bool)
+(declare-fun |All Ancestors Matched| () Bool)
+(declare-fun |No More Matches Possible| () Bool)
+(declare-fun |Not All Matched| () Bool)
+(declare-fun |Encoding Symbolic Information| () Bool)
+(declare-fun R_3_2_12_46_data () Int)
+(assert (= S_0_2_9_63_dest 0))
+(assert (= S_0_2_9_63_tag 1))
+(assert (= R_0_3_13_69_src 3))
+(assert (= R_0_3_13_69_tag 2))
+(assert (= S_0_6_28_86_dest 0))
+(assert (= S_0_6_28_86_tag 1))
+(assert (= S_1_2_10_63_dest 1))
+(assert (= S_1_2_10_63_tag 1))
+(assert (= R_1_3_17_69_src 3))
+(assert (= R_1_3_17_69_tag 2))
+(assert (= S_2_2_11_63_dest 2))
+(assert (= S_2_2_11_63_tag 1))
+(assert (= R_2_3_21_69_src 3))
+(assert (= R_2_3_21_69_tag 2))
+(assert (= R_3_2_12_46_tag 1))
+(assert (= S_3_3_14_54_dest 3))
+(assert (= S_3_3_14_54_tag 2))
+(assert (= R_3_4_16_46_tag 1))
+(assert (= S_3_5_18_54_dest 3))
+(assert (= S_3_5_18_54_tag 2))
+(assert (= R_3_6_20_46_tag 1))
+(assert (= S_3_7_22_54_dest 3))
+(assert (= S_3_7_22_54_tag 2))
+(assert (= R_3_8_24_46_tag 1))
+
+
+
+
+
+(assert |Partial Order Constraints|)
+(assert (< C_0_0_1_36_clk C_0_1_5_40_clk))
+(assert (< C_0_1_5_40_clk S_0_2_9_63_clk))
+(assert (< S_0_2_9_63_clk R_0_3_13_69_clk))
+(assert (< R_0_3_13_69_clk C_0_4_15_78_clk))
+(assert (< C_0_4_15_78_clk C_0_5_25_79_clk))
+(assert (< C_0_5_25_79_clk S_0_6_28_86_clk))
+(assert (< S_0_6_28_86_clk C_0_7_31_93_clk))
+(assert (< C_1_0_2_36_clk C_1_1_6_40_clk))
+(assert (< C_1_1_6_40_clk S_1_2_10_63_clk))
+(assert (< S_1_2_10_63_clk R_1_3_17_69_clk))
+(assert (< R_1_3_17_69_clk C_1_4_19_78_clk))
+(assert (< C_1_4_19_78_clk C_1_5_26_79_clk))
+(assert (< C_1_5_26_79_clk C_1_6_29_93_clk))
+(assert (< C_2_0_3_36_clk C_2_1_7_40_clk))
+(assert (< C_2_1_7_40_clk S_2_2_11_63_clk))
+(assert (< S_2_2_11_63_clk R_2_3_21_69_clk))
+(assert (< R_2_3_21_69_clk C_2_4_23_78_clk))
+(assert (< C_2_4_23_78_clk C_2_5_27_79_clk))
+(assert (< C_2_5_27_79_clk C_2_6_30_93_clk))
+(assert (< C_3_0_4_36_clk C_3_1_8_40_clk))
+(assert (< C_3_1_8_40_clk R_3_2_12_46_clk))
+(assert (< R_3_2_12_46_clk S_3_3_14_54_clk))
+(assert (< S_3_3_14_54_clk R_3_4_16_46_clk))
+(assert (< R_3_4_16_46_clk S_3_5_18_54_clk))
+(assert (< S_3_5_18_54_clk R_3_6_20_46_clk))
+(assert (< R_3_6_20_46_clk S_3_7_22_54_clk))
+(assert (< S_3_7_22_54_clk R_3_8_24_46_clk))
+
+(assert |Match Collectives|)
+(assert (and (= C_0_0_1_36_clk C_1_0_2_36_clk)
+     (= C_0_0_1_36_clk C_2_0_3_36_clk)
+     (= C_0_0_1_36_clk C_3_0_4_36_clk)))
+(assert (and (= C_0_1_5_40_clk C_1_1_6_40_clk)
+     (= C_0_1_5_40_clk C_2_1_7_40_clk)
+     (= C_0_1_5_40_clk C_3_1_8_40_clk)))
+(assert (and (= C_0_4_15_78_clk C_1_4_19_78_clk) (= C_0_4_15_78_clk C_2_4_23_78_clk)))
+(assert (and (= C_0_5_25_79_clk C_1_5_26_79_clk) (= C_0_5_25_79_clk C_2_5_27_79_clk)))
+(assert (and (= C_0_7_31_93_clk C_1_6_29_93_clk) (= C_0_7_31_93_clk C_2_6_30_93_clk)))
+
+(assert |Match Pairs|)
+(assert (or (and (= R_3_4_16_46_src S_0_2_9_63_dest)
+         (= R_3_4_16_46_tag S_0_2_9_63_tag)
+         (= R_3_4_16_46_clk S_0_2_9_63_clk))
+    (and (= R_3_4_16_46_src S_0_6_28_86_dest)
+         (= R_3_4_16_46_tag S_0_6_28_86_tag)
+         (= R_3_4_16_46_clk S_0_6_28_86_clk))
+    (and (= R_3_4_16_46_src S_1_2_10_63_dest)
+         (= R_3_4_16_46_tag S_1_2_10_63_tag)
+         (= R_3_4_16_46_clk S_1_2_10_63_clk))
+    (and (= R_3_4_16_46_src S_2_2_11_63_dest)
+         (= R_3_4_16_46_tag S_2_2_11_63_tag)
+         (= R_3_4_16_46_clk S_2_2_11_63_clk))))
+(assert (or (and (= R_3_2_12_46_src S_0_2_9_63_dest)
+         (= R_3_2_12_46_tag S_0_2_9_63_tag)
+         (= R_3_2_12_46_clk S_0_2_9_63_clk))
+    (and (= R_3_2_12_46_src S_1_2_10_63_dest)
+         (= R_3_2_12_46_tag S_1_2_10_63_tag)
+         (= R_3_2_12_46_clk S_1_2_10_63_clk))
+    (and (= R_3_2_12_46_src S_2_2_11_63_dest)
+         (= R_3_2_12_46_tag S_2_2_11_63_tag)
+         (= R_3_2_12_46_clk S_2_2_11_63_clk))))
+(assert (or (and (= R_3_4_16_46_src S_0_2_9_63_dest)
+         (= R_3_4_16_46_tag S_0_2_9_63_tag)
+         (= R_3_4_16_46_clk S_0_2_9_63_clk))
+    (and (= R_3_4_16_46_src S_0_6_28_86_dest)
+         (= R_3_4_16_46_tag S_0_6_28_86_tag)
+         (= R_3_4_16_46_clk S_0_6_28_86_clk))
+    (and (= R_3_4_16_46_src S_1_2_10_63_dest)
+         (= R_3_4_16_46_tag S_1_2_10_63_tag)
+         (= R_3_4_16_46_clk S_1_2_10_63_clk))
+    (and (= R_3_4_16_46_src S_2_2_11_63_dest)
+         (= R_3_4_16_46_tag S_2_2_11_63_tag)
+         (= R_3_4_16_46_clk S_2_2_11_63_clk))))
+(assert (or (and (= R_3_6_20_46_src S_0_2_9_63_dest)
+         (= R_3_6_20_46_tag S_0_2_9_63_tag)
+         (= R_3_6_20_46_clk S_0_2_9_63_clk))
+    (and (= R_3_6_20_46_src S_0_6_28_86_dest)
+         (= R_3_6_20_46_tag S_0_6_28_86_tag)
+         (= R_3_6_20_46_clk S_0_6_28_86_clk))
+    (and (= R_3_6_20_46_src S_1_2_10_63_dest)
+         (= R_3_6_20_46_tag S_1_2_10_63_tag)
+         (= R_3_6_20_46_clk S_1_2_10_63_clk))
+    (and (= R_3_6_20_46_src S_2_2_11_63_dest)
+         (= R_3_6_20_46_tag S_2_2_11_63_tag)
+         (= R_3_6_20_46_clk S_2_2_11_63_clk))))
+(assert (or (and (= R_3_2_12_46_src S_0_2_9_63_dest)
+         (= R_3_2_12_46_tag S_0_2_9_63_tag)
+         (= R_3_2_12_46_clk S_0_2_9_63_clk))
+    (and (= R_3_2_12_46_src S_1_2_10_63_dest)
+         (= R_3_2_12_46_tag S_1_2_10_63_tag)
+         (= R_3_2_12_46_clk S_1_2_10_63_clk))
+    (and (= R_3_2_12_46_src S_2_2_11_63_dest)
+         (= R_3_2_12_46_tag S_2_2_11_63_tag)
+         (= R_3_2_12_46_clk S_2_2_11_63_clk))))
+(assert (or (and (= R_3_6_20_46_src S_0_2_9_63_dest)
+         (= R_3_6_20_46_tag S_0_2_9_63_tag)
+         (= R_3_6_20_46_clk S_0_2_9_63_clk))
+    (and (= R_3_6_20_46_src S_0_6_28_86_dest)
+         (= R_3_6_20_46_tag S_0_6_28_86_tag)
+         (= R_3_6_20_46_clk S_0_6_28_86_clk))
+    (and (= R_3_6_20_46_src S_1_2_10_63_dest)
+         (= R_3_6_20_46_tag S_1_2_10_63_tag)
+         (= R_3_6_20_46_clk S_1_2_10_63_clk))
+    (and (= R_3_6_20_46_src S_2_2_11_63_dest)
+         (= R_3_6_20_46_tag S_2_2_11_63_tag)
+         (= R_3_6_20_46_clk S_2_2_11_63_clk))))
+(assert (or (and (= R_3_8_24_46_src S_0_6_28_86_dest)
+         (= R_3_8_24_46_tag S_0_6_28_86_tag)
+         (= R_3_8_24_46_clk S_0_6_28_86_clk))
+    (and (= R_3_8_24_46_src S_1_2_10_63_dest)
+         (= R_3_8_24_46_tag S_1_2_10_63_tag)
+         (= R_3_8_24_46_clk S_1_2_10_63_clk))
+    (and (= R_3_8_24_46_src S_2_2_11_63_dest)
+         (= R_3_8_24_46_tag S_2_2_11_63_tag)
+         (= R_3_8_24_46_clk S_2_2_11_63_clk))))
+(assert (or (and (= R_3_6_20_46_src S_0_2_9_63_dest)
+         (= R_3_6_20_46_tag S_0_2_9_63_tag)
+         (= R_3_6_20_46_clk S_0_2_9_63_clk))
+    (and (= R_3_6_20_46_src S_0_6_28_86_dest)
+         (= R_3_6_20_46_tag S_0_6_28_86_tag)
+         (= R_3_6_20_46_clk S_0_6_28_86_clk))
+    (and (= R_3_6_20_46_src S_1_2_10_63_dest)
+         (= R_3_6_20_46_tag S_1_2_10_63_tag)
+         (= R_3_6_20_46_clk S_1_2_10_63_clk))
+    (and (= R_3_6_20_46_src S_2_2_11_63_dest)
+         (= R_3_6_20_46_tag S_2_2_11_63_tag)
+         (= R_3_6_20_46_clk S_2_2_11_63_clk))))
+(assert (or (and (= R_3_4_16_46_src S_0_2_9_63_dest)
+         (= R_3_4_16_46_tag S_0_2_9_63_tag)
+         (= R_3_4_16_46_clk S_0_2_9_63_clk))
+    (and (= R_3_4_16_46_src S_0_6_28_86_dest)
+         (= R_3_4_16_46_tag S_0_6_28_86_tag)
+         (= R_3_4_16_46_clk S_0_6_28_86_clk))
+    (and (= R_3_4_16_46_src S_1_2_10_63_dest)
+         (= R_3_4_16_46_tag S_1_2_10_63_tag)
+         (= R_3_4_16_46_clk S_1_2_10_63_clk))
+    (and (= R_3_4_16_46_src S_2_2_11_63_dest)
+         (= R_3_4_16_46_tag S_2_2_11_63_tag)
+         (= R_3_4_16_46_clk S_2_2_11_63_clk))))
+(assert (or (and (= R_3_2_12_46_src S_0_2_9_63_dest)
+         (= R_3_2_12_46_tag S_0_2_9_63_tag)
+         (= R_3_2_12_46_clk S_0_2_9_63_clk))
+    (and (= R_3_2_12_46_src S_1_2_10_63_dest)
+         (= R_3_2_12_46_tag S_1_2_10_63_tag)
+         (= R_3_2_12_46_clk S_1_2_10_63_clk))
+    (and (= R_3_2_12_46_src S_2_2_11_63_dest)
+         (= R_3_2_12_46_tag S_2_2_11_63_tag)
+         (= R_3_2_12_46_clk S_2_2_11_63_clk))))
+(assert (or (and (= R_3_8_24_46_src S_0_6_28_86_dest)
+         (= R_3_8_24_46_tag S_0_6_28_86_tag)
+         (= R_3_8_24_46_clk S_0_6_28_86_clk))
+    (and (= R_3_8_24_46_src S_1_2_10_63_dest)
+         (= R_3_8_24_46_tag S_1_2_10_63_tag)
+         (= R_3_8_24_46_clk S_1_2_10_63_clk))
+    (and (= R_3_8_24_46_src S_2_2_11_63_dest)
+         (= R_3_8_24_46_tag S_2_2_11_63_tag)
+         (= R_3_8_24_46_clk S_2_2_11_63_clk))))
+(assert (or (and (= R_3_8_24_46_src S_0_6_28_86_dest)
+         (= R_3_8_24_46_tag S_0_6_28_86_tag)
+         (= R_3_8_24_46_clk S_0_6_28_86_clk))
+    (and (= R_3_8_24_46_src S_1_2_10_63_dest)
+         (= R_3_8_24_46_tag S_1_2_10_63_tag)
+         (= R_3_8_24_46_clk S_1_2_10_63_clk))
+    (and (= R_3_8_24_46_src S_2_2_11_63_dest)
+         (= R_3_8_24_46_tag S_2_2_11_63_tag)
+         (= R_3_8_24_46_clk S_2_2_11_63_clk))))
+(assert (or (and (= R_3_6_20_46_src S_0_2_9_63_dest)
+         (= R_3_6_20_46_tag S_0_2_9_63_tag)
+         (= R_3_6_20_46_clk S_0_2_9_63_clk))
+    (and (= R_3_6_20_46_src S_0_6_28_86_dest)
+         (= R_3_6_20_46_tag S_0_6_28_86_tag)
+         (= R_3_6_20_46_clk S_0_6_28_86_clk))
+    (and (= R_3_6_20_46_src S_1_2_10_63_dest)
+         (= R_3_6_20_46_tag S_1_2_10_63_tag)
+         (= R_3_6_20_46_clk S_1_2_10_63_clk))
+    (and (= R_3_6_20_46_src S_2_2_11_63_dest)
+         (= R_3_6_20_46_tag S_2_2_11_63_tag)
+         (= R_3_6_20_46_clk S_2_2_11_63_clk))))
+(assert (or (and (= R_3_4_16_46_src S_0_2_9_63_dest)
+         (= R_3_4_16_46_tag S_0_2_9_63_tag)
+         (= R_3_4_16_46_clk S_0_2_9_63_clk))
+    (and (= R_3_4_16_46_src S_0_6_28_86_dest)
+         (= R_3_4_16_46_tag S_0_6_28_86_tag)
+         (= R_3_4_16_46_clk S_0_6_28_86_clk))
+    (and (= R_3_4_16_46_src S_1_2_10_63_dest)
+         (= R_3_4_16_46_tag S_1_2_10_63_tag)
+         (= R_3_4_16_46_clk S_1_2_10_63_clk))
+    (and (= R_3_4_16_46_src S_2_2_11_63_dest)
+         (= R_3_4_16_46_tag S_2_2_11_63_tag)
+         (= R_3_4_16_46_clk S_2_2_11_63_clk))))
+
+(assert |Unique Match Send|)
+(assert (=> s_1234 (not s_1232)))
+(assert (=> s_1234 (not s_1236)))
+(assert (=> s_1234 (not s_1238)))
+(assert (=> s_0232 (not s_0234)))
+(assert (=> s_0232 (not s_0236)))
+(assert (=> s_0234 (not s_0232)))
+(assert (=> s_0234 (not s_0236)))
+(assert (=> s_0236 (not s_0232)))
+(assert (=> s_0236 (not s_0234)))
+(assert (=> s_1232 (not s_1234)))
+(assert (=> s_1232 (not s_1236)))
+(assert (=> s_1232 (not s_1238)))
+(assert (=> s_1236 (not s_1232)))
+(assert (=> s_1236 (not s_1234)))
+(assert (=> s_1236 (not s_1238)))
+(assert (=> s_1238 (not s_1232)))
+(assert (=> s_1238 (not s_1234)))
+(assert (=> s_1238 (not s_1236)))
+(assert (=> s_2236 (not s_2232)))
+(assert (=> s_2236 (not s_2234)))
+(assert (=> s_2236 (not s_2238)))
+(assert (=> s_2234 (not s_2232)))
+(assert (=> s_2234 (not s_2236)))
+(assert (=> s_2234 (not s_2238)))
+(assert (=> s_2232 (not s_2234)))
+(assert (=> s_2232 (not s_2236)))
+(assert (=> s_2232 (not s_2238)))
+(assert (=> s_2238 (not s_2232)))
+(assert (=> s_2238 (not s_2234)))
+(assert (=> s_2238 (not s_2236)))
+(assert (=> s_0638 (not s_0634)))
+(assert (=> s_0638 (not s_0636)))
+(assert (=> s_0636 (not s_0634)))
+(assert (=> s_0636 (not s_0638)))
+(assert (=> s_0634 (not s_0636)))
+(assert (=> s_0634 (not s_0638)))
+
+(assert |Unique Match Receive|)
+(assert (=> s_1234 (not s_0234)))
+(assert (=> s_1234 (not s_0634)))
+(assert (=> s_1234 (not s_2234)))
+(assert (=> s_0232 (not s_1232)))
+(assert (=> s_0232 (not s_2232)))
+(assert (=> s_0234 (not s_0634)))
+(assert (=> s_0234 (not s_1234)))
+(assert (=> s_0234 (not s_2234)))
+(assert (=> s_0236 (not s_0636)))
+(assert (=> s_0236 (not s_1236)))
+(assert (=> s_0236 (not s_2236)))
+(assert (=> s_1232 (not s_0232)))
+(assert (=> s_1232 (not s_2232)))
+(assert (=> s_1236 (not s_0236)))
+(assert (=> s_1236 (not s_0636)))
+(assert (=> s_1236 (not s_2236)))
+(assert (=> s_1238 (not s_0638)))
+(assert (=> s_1238 (not s_2238)))
+(assert (=> s_2236 (not s_0236)))
+(assert (=> s_2236 (not s_0636)))
+(assert (=> s_2236 (not s_1236)))
+(assert (=> s_2234 (not s_0234)))
+(assert (=> s_2234 (not s_0634)))
+(assert (=> s_2234 (not s_1234)))
+(assert (=> s_2232 (not s_0232)))
+(assert (=> s_2232 (not s_1232)))
+(assert (=> s_2238 (not s_0638)))
+(assert (=> s_2238 (not s_1238)))
+(assert (=> s_0638 (not s_1238)))
+(assert (=> s_0638 (not s_2238)))
+(assert (=> s_0636 (not s_0236)))
+(assert (=> s_0636 (not s_1236)))
+(assert (=> s_0636 (not s_2236)))
+(assert (=> s_0634 (not s_0234)))
+(assert (=> s_0634 (not s_1234)))
+(assert (=> s_0634 (not s_2234)))
+
+(assert |RF Some Constraint|)
+(assert (=> S_0_2_9_63_m (or s_0232 s_0234 s_0236)))
+(assert (=> R_0_3_13_69_m (or s_3303)))
+(assert (=> S_0_6_28_86_m (or s_0638 s_0636 s_0634)))
+(assert (=> S_1_2_10_63_m (or s_1234 s_1232 s_1236 s_1238)))
+(assert (=> R_1_3_17_69_m (or s_3513)))
+(assert (=> S_2_2_11_63_m (or s_2236 s_2234 s_2232 s_2238)))
+(assert (=> R_2_3_21_69_m (or s_3723)))
+(assert (=> R_3_2_12_46_m (or s_0232 s_1232 s_2232)))
+(assert (=> S_3_3_14_54_m (or s_3303)))
+(assert (=> R_3_4_16_46_m (or s_1234 s_0234 s_2234 s_0634)))
+(assert (=> S_3_5_18_54_m (or s_3513)))
+(assert (=> R_3_6_20_46_m (or s_0236 s_1236 s_2236 s_0636)))
+(assert (=> S_3_7_22_54_m (or s_3723)))
+(assert (=> R_3_8_24_46_m (or s_1238 s_2238 s_0638)))
+
+(assert |Matched only|)
+(assert (=> s_1234 (and S_1_2_10_63_m R_3_4_16_46_m)))
+(assert (=> s_0232 (and S_0_2_9_63_m R_3_2_12_46_m)))
+(assert (=> s_0234 (and S_0_2_9_63_m R_3_4_16_46_m)))
+(assert (=> s_0236 (and S_0_2_9_63_m R_3_6_20_46_m)))
+(assert (=> s_3303 (and S_3_3_14_54_m R_0_3_13_69_m)))
+(assert (=> s_1232 (and S_1_2_10_63_m R_3_2_12_46_m)))
+(assert (=> s_1236 (and S_1_2_10_63_m R_3_6_20_46_m)))
+(assert (=> s_1238 (and S_1_2_10_63_m R_3_8_24_46_m)))
+(assert (=> s_3513 (and S_3_5_18_54_m R_1_3_17_69_m)))
+(assert (=> s_2236 (and S_2_2_11_63_m R_3_6_20_46_m)))
+(assert (=> s_2234 (and S_2_2_11_63_m R_3_4_16_46_m)))
+(assert (=> s_2232 (and S_2_2_11_63_m R_3_2_12_46_m)))
+(assert (=> s_2238 (and S_2_2_11_63_m R_3_8_24_46_m)))
+(assert (=> s_3723 (and S_3_7_22_54_m R_2_3_21_69_m)))
+(assert (=> s_0638 (and S_0_6_28_86_m R_3_8_24_46_m)))
+(assert (=> s_0636 (and S_0_6_28_86_m R_3_6_20_46_m)))
+(assert (=> s_0634 (and S_0_6_28_86_m R_3_4_16_46_m)))
+
+(assert |Match Implies Issued|)
+(assert (=> S_0_2_9_63_m S_0_2_9_63_i))
+(assert (=> R_0_3_13_69_m R_0_3_13_69_i))
+(assert (=> S_0_6_28_86_m S_0_6_28_86_i))
+(assert (=> S_1_2_10_63_m S_1_2_10_63_i))
+(assert (=> R_1_3_17_69_m R_1_3_17_69_i))
+(assert (=> S_2_2_11_63_m S_2_2_11_63_i))
+(assert (=> R_2_3_21_69_m R_2_3_21_69_i))
+(assert (=> R_3_2_12_46_m R_3_2_12_46_i))
+(assert (=> S_3_3_14_54_m S_3_3_14_54_i))
+(assert (=> R_3_4_16_46_m R_3_4_16_46_i))
+(assert (=> S_3_5_18_54_m S_3_5_18_54_i))
+(assert (=> R_3_6_20_46_m R_3_6_20_46_i))
+(assert (=> S_3_7_22_54_m S_3_7_22_54_i))
+(assert (=> R_3_8_24_46_m R_3_8_24_46_i))
+(assert (and (=> (and C_0_0_1_36_i C_1_0_2_36_i C_2_0_3_36_i C_3_0_4_36_i) C_0_0_1_36_m)
+     (=> C_0_0_1_36_m (and C_0_0_1_36_i C_1_0_2_36_i C_2_0_3_36_i C_3_0_4_36_i))))
+(assert (and (=> (and C_0_1_5_40_i C_1_1_6_40_i C_2_1_7_40_i C_3_1_8_40_i) C_0_1_5_40_m)
+     (=> C_0_1_5_40_m (and C_0_1_5_40_i C_1_1_6_40_i C_2_1_7_40_i C_3_1_8_40_i))))
+(assert (and (=> (and C_0_4_15_78_i C_1_4_19_78_i C_2_4_23_78_i) C_0_4_15_78_m)
+     (=> C_0_4_15_78_m (and C_0_4_15_78_i C_1_4_19_78_i C_2_4_23_78_i))))
+(assert (and (=> (and C_0_5_25_79_i C_1_5_26_79_i C_2_5_27_79_i) C_0_5_25_79_m)
+     (=> C_0_5_25_79_m (and C_0_5_25_79_i C_1_5_26_79_i C_2_5_27_79_i))))
+(assert (and (=> (and C_0_7_31_93_i C_1_6_29_93_i C_2_6_30_93_i) C_0_7_31_93_m)
+     (=> C_0_7_31_93_m (and C_0_7_31_93_i C_1_6_29_93_i C_2_6_30_93_i))))
+
+(assert |All Ancestors Matched|)
+(assert (and (=> true C_0_0_1_36_i) (=> C_0_0_1_36_i true)))
+(assert (and (=> (and C_0_0_1_36_m) C_0_1_5_40_i) (=> C_0_1_5_40_i (and C_0_0_1_36_m))))
+(assert (and (=> (and C_0_1_5_40_m) S_0_2_9_63_i) (=> S_0_2_9_63_i (and C_0_1_5_40_m))))
+(assert (and (=> (and S_0_2_9_63_m) R_0_3_13_69_i)
+     (=> R_0_3_13_69_i (and S_0_2_9_63_m))))
+(assert (and (=> (and R_0_3_13_69_m) C_0_4_15_78_i)
+     (=> C_0_4_15_78_i (and R_0_3_13_69_m))))
+(assert (and (=> (and C_0_4_15_78_m) C_0_5_25_79_i)
+     (=> C_0_5_25_79_i (and C_0_4_15_78_m))))
+(assert (and (=> (and C_0_5_25_79_m) S_0_6_28_86_i)
+     (=> S_0_6_28_86_i (and C_0_5_25_79_m))))
+(assert (and (=> (and S_0_6_28_86_m) C_0_7_31_93_i)
+     (=> C_0_7_31_93_i (and S_0_6_28_86_m))))
+(assert (and (=> true C_1_0_2_36_i) (=> C_1_0_2_36_i true)))
+(assert (and (=> (and C_0_0_1_36_m) C_1_1_6_40_i) (=> C_1_1_6_40_i (and C_0_0_1_36_m))))
+(assert (and (=> (and C_0_1_5_40_m) S_1_2_10_63_i)
+     (=> S_1_2_10_63_i (and C_0_1_5_40_m))))
+(assert (and (=> (and S_1_2_10_63_m) R_1_3_17_69_i)
+     (=> R_1_3_17_69_i (and S_1_2_10_63_m))))
+(assert (and (=> (and R_1_3_17_69_m) C_1_4_19_78_i)
+     (=> C_1_4_19_78_i (and R_1_3_17_69_m))))
+(assert (and (=> (and C_0_4_15_78_m) C_1_5_26_79_i)
+     (=> C_1_5_26_79_i (and C_0_4_15_78_m))))
+(assert (and (=> (and C_0_5_25_79_m) C_1_6_29_93_i)
+     (=> C_1_6_29_93_i (and C_0_5_25_79_m))))
+(assert (and (=> true C_2_0_3_36_i) (=> C_2_0_3_36_i true)))
+(assert (and (=> (and C_0_0_1_36_m) C_2_1_7_40_i) (=> C_2_1_7_40_i (and C_0_0_1_36_m))))
+(assert (and (=> (and C_0_1_5_40_m) S_2_2_11_63_i)
+     (=> S_2_2_11_63_i (and C_0_1_5_40_m))))
+(assert (and (=> (and S_2_2_11_63_m) R_2_3_21_69_i)
+     (=> R_2_3_21_69_i (and S_2_2_11_63_m))))
+(assert (and (=> (and R_2_3_21_69_m) C_2_4_23_78_i)
+     (=> C_2_4_23_78_i (and R_2_3_21_69_m))))
+(assert (and (=> (and C_0_4_15_78_m) C_2_5_27_79_i)
+     (=> C_2_5_27_79_i (and C_0_4_15_78_m))))
+(assert (and (=> (and C_0_5_25_79_m) C_2_6_30_93_i)
+     (=> C_2_6_30_93_i (and C_0_5_25_79_m))))
+(assert (and (=> true C_3_0_4_36_i) (=> C_3_0_4_36_i true)))
+(assert (and (=> (and C_0_0_1_36_m) C_3_1_8_40_i) (=> C_3_1_8_40_i (and C_0_0_1_36_m))))
+(assert (and (=> (and C_0_1_5_40_m) R_3_2_12_46_i)
+     (=> R_3_2_12_46_i (and C_0_1_5_40_m))))
+(assert (and (=> (and R_3_2_12_46_m) S_3_3_14_54_i)
+     (=> S_3_3_14_54_i (and R_3_2_12_46_m))))
+(assert (and (=> (and S_3_3_14_54_m) R_3_4_16_46_i)
+     (=> R_3_4_16_46_i (and S_3_3_14_54_m))))
+(assert (and (=> (and R_3_4_16_46_m) S_3_5_18_54_i)
+     (=> S_3_5_18_54_i (and R_3_4_16_46_m))))
+(assert (and (=> (and S_3_5_18_54_m) R_3_6_20_46_i)
+     (=> R_3_6_20_46_i (and S_3_5_18_54_m))))
+(assert (and (=> (and R_3_6_20_46_m) S_3_7_22_54_i)
+     (=> S_3_7_22_54_i (and R_3_6_20_46_m))))
+(assert (and (=> (and S_3_7_22_54_m) R_3_8_24_46_i)
+     (=> R_3_8_24_46_i (and S_3_7_22_54_m))))
+
+(assert |No More Matches Possible|)
+(assert (or S_1_2_10_63_m (not S_1_2_10_63_i) R_3_4_16_46_m (not R_3_4_16_46_i)))
+(assert (or S_0_2_9_63_m (not S_0_2_9_63_i) R_3_2_12_46_m (not R_3_2_12_46_i)))
+(assert (or S_0_2_9_63_m (not S_0_2_9_63_i) R_3_4_16_46_m (not R_3_4_16_46_i)))
+(assert (or S_0_2_9_63_m (not S_0_2_9_63_i) R_3_6_20_46_m (not R_3_6_20_46_i)))
+(assert (or S_3_3_14_54_m (not S_3_3_14_54_i) R_0_3_13_69_m (not R_0_3_13_69_i)))
+(assert (or S_1_2_10_63_m (not S_1_2_10_63_i) R_3_2_12_46_m (not R_3_2_12_46_i)))
+(assert (or S_1_2_10_63_m (not S_1_2_10_63_i) R_3_6_20_46_m (not R_3_6_20_46_i)))
+(assert (or S_1_2_10_63_m (not S_1_2_10_63_i) R_3_8_24_46_m (not R_3_8_24_46_i)))
+(assert (or S_3_5_18_54_m (not S_3_5_18_54_i) R_1_3_17_69_m (not R_1_3_17_69_i)))
+(assert (or S_2_2_11_63_m (not S_2_2_11_63_i) R_3_6_20_46_m (not R_3_6_20_46_i)))
+(assert (or S_2_2_11_63_m (not S_2_2_11_63_i) R_3_4_16_46_m (not R_3_4_16_46_i)))
+(assert (or S_2_2_11_63_m (not S_2_2_11_63_i) R_3_2_12_46_m (not R_3_2_12_46_i)))
+(assert (or S_2_2_11_63_m (not S_2_2_11_63_i) R_3_8_24_46_m (not R_3_8_24_46_i)))
+(assert (or S_3_7_22_54_m (not S_3_7_22_54_i) R_2_3_21_69_m (not R_2_3_21_69_i)))
+(assert (or S_0_6_28_86_m (not S_0_6_28_86_i) R_3_8_24_46_m (not R_3_8_24_46_i)))
+(assert (or S_0_6_28_86_m (not S_0_6_28_86_i) R_3_6_20_46_m (not R_3_6_20_46_i)))
+(assert (or S_0_6_28_86_m (not S_0_6_28_86_i) R_3_4_16_46_m (not R_3_4_16_46_i)))
+
+(assert |Not All Matched|)
+(assert (or (not C_0_0_1_36_m)
+    (not C_0_1_5_40_m)
+    (not S_0_2_9_63_m)
+    (not R_0_3_13_69_m)
+    (not C_0_4_15_78_m)
+    (not C_0_5_25_79_m)
+    (not S_0_6_28_86_m)
+    (not C_0_7_31_93_m)
+    (not C_0_0_1_36_m)
+    (not C_0_1_5_40_m)
+    (not S_1_2_10_63_m)
+    (not R_1_3_17_69_m)
+    (not C_0_4_15_78_m)
+    (not C_0_5_25_79_m)
+    (not C_0_7_31_93_m)
+    (not C_0_0_1_36_m)
+    (not C_0_1_5_40_m)
+    (not S_2_2_11_63_m)
+    (not R_2_3_21_69_m)
+    (not C_0_4_15_78_m)
+    (not C_0_5_25_79_m)
+    (not C_0_7_31_93_m)
+    (not C_0_0_1_36_m)
+    (not C_0_1_5_40_m)
+    (not R_3_2_12_46_m)
+    (not S_3_3_14_54_m)
+    (not R_3_4_16_46_m)
+    (not S_3_5_18_54_m)
+    (not R_3_6_20_46_m)
+    (not S_3_7_22_54_m)
+    (not R_3_8_24_46_m)))
+(assert |Encoding Symbolic Information|)
+(assert (= R_3_2_12_46_data 1))
+(assert (= R_3_2_12_46_data 1))
+(assert (= R_3_2_12_46_data 1))
+
+
+Deadlock Detected!!
+
+
+Total time for the verification: 1.94981 seconds
+
+
+
+

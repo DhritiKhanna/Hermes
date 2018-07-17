@@ -1,0 +1,58 @@
+dhriti@dhriti:~/Dropbox/mopperExtension/clangTool/Non-SinglePathBenchmarks$ mpirun -n 4 philosophers_deadlock
+Hello from table 0 
+Hello from philosopher 1 
+Philosopher 1 is sleeping 
+Hello from philosopher 2 
+Philosopher 2 is sleeping 
+Hello from philosopher 3 
+Philosopher 3 is sleeping 
+Philosopher 1 is waiting to eat 
+Philosopher 2 is waiting to eat 
+Table got philosopher 2 fork left request
+Table sent philosopher 2 the left fork
+Table got philosopher 2 fork right request
+Table sent philosopher 2 the right fork
+Table got philosopher 2 fork release
+Table got philosopher 3 fork left request
+Table sent philosopher 3 the left fork
+Table got philosopher 3 fork right request
+Philosopher 3 is waiting to eat 
+Table sent philosopher 3 the right fork
+Table got philosopher 3 fork release
+Philosopher 2 is eating 
+Philosopher 2 is done eating 
+Philosopher 3 is eating 
+Philosopher 3 is done eating 
+Table got philosopher 1 fork left request
+Table sent philosopher 1 the left fork
+Table got philosopher 1 fork right request
+Table sent philosopher 1 the right fork
+Table got philosopher 1 fork release
+Philosopher 1 is eating 
+Philosopher 1 is done eating 
+dhriti@dhriti:~/Dropbox/mopperExtension/clangTool/Non-SinglePathBenchmarks$ mpirun -n 4 philosophers_deadlock
+Hello from philosopher 3 
+Philosopher 3 is sleeping 
+Hello from table 0 
+Hello from philosopher 1 
+Philosopher 1 is sleeping 
+Hello from philosopher 2 
+Philosopher 2 is sleeping 
+Philosopher 1 is waiting to eat 
+Philosopher 3 is waiting to eat 
+Table got philosopher 3 fork left request
+Table sent philosopher 3 the left fork
+Table got philosopher 1 fork left request
+Table sent philosopher 1 the left fork
+Table got philosopher 3 fork right request
+Table sent philosopher 3 the right fork
+Table got philosopher 1 fork right request
+Table got philosopher 3 fork release
+Philosopher 2 is waiting to eat 
+Table got philosopher 2 fork left request
+Table sent philosopher 2 the left fork
+Philosopher 3 is eating 
+Philosopher 3 is done eating 
+Table got philosopher 2 fork right request
+
+

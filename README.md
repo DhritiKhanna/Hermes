@@ -13,8 +13,8 @@ The detailed instructions are as follows:
 To compile the clang tool, use  `cd clangTool && make clangTool`
 
 This requires:
-* clang+llvm build files which you can download from [here](http://releases.llvm.org/3.8.0/).
-* a file called _compile\_commands.json_ which is a compilation database needed for clang tooling. The directory contains a sample compile_commands.json file. You just have to specify the command, fileName, and the directory. Learn how to create such files [here](https://clang.llvm.org/docs/JSONCompilationDatabase.html). 
+* clang+llvm build files which you can download from [here](http://releases.llvm.org/3.8.0/). I have downloaded clang+llvm-3.8.0-x86\_64-linux-gnu-debian8.tar.xz. Please change the location of the libraries in Makefile in clangTool folder (this flag: CLANG\_BUILD\_FLAGS).
+* a file called _compile\_commands.json_ which is a compilation database needed for clang tooling. The directory contains a sample compile_commands.json file. You just have to specify the command, fileName, and the directory. Learn how to create such files [here](https://clang.llvm.org/docs/JSONCompilationDatabase.html).
 
 Change the path to these directories in the Makefile of directory _clangTool_ accordingly.
 
@@ -29,6 +29,8 @@ Follow these steps:
 * `make`
 * `sudo make install`
 * `cd scheduler`
+
+If the `make` command gives any error regarding libopts.a or solver-src.a being missing, then run `make` command from these directories, i.e. from libopts and solver (probably after running `make clean`). Also, make sure to add `-lz3` for the `LIBS` in Makefile of the `Hermes` and `scheduler` folders.
 
 This should generate _libisp\_prof.so_ in _/usr/local/lib/_.
 

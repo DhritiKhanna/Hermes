@@ -10,13 +10,15 @@ The detailed instructions are as follows:
 
 ## 1. Instrument
 
-To compile the clang tool, use  `cd clangTool && make clangTool`
+We have used clang to instrument the source code. You will require clang and llvm build files which are not shipped with Hermes.
 
-This requires:
+Compiling clangTool requires:
 * clang+llvm build files which you can download from [here](http://releases.llvm.org/3.8.0/).
-* a file called _compile\_commands.json_ which is a compilation database needed for clang tooling. The directory contains a sample compile_commands.json file. You just have to specify the command, fileName, and the directory. Learn how to create such files [here](https://clang.llvm.org/docs/JSONCompilationDatabase.html). 
+* a file called _compile\_commands.json_ which is a compilation database needed for clang tooling. The directory contains a sample compile_commands.json file. You just have to specify the command, fileName, and the directory. Learn how to create such files [here](https://clang.llvm.org/docs/JSONCompilationDatabase.html). This file requires the benchmark name, the path to directory where this benchmark lies, and the compilation command in it. Please change these things accordingly in the file.
 
-Change the path to these directories in the Makefile of directory _clangTool_ accordingly.
+Also, change the path to these directories in the Makefile of directory _clangTool_ accordingly (under the flag CLANG\_BUILD\_FLAGS).
+
+To compile the clang tool, use  `cd clangTool && make clangTool`
 
 To produce the instrumented code, run: `./clangTool path-to-the-source/source-file.cpp`
 

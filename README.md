@@ -23,7 +23,7 @@ This will generate a file called __i\_source-file.cpp__ in the same directory wh
 
 ## 2. Compile and profile
 
-Install mpi (`sudo apt-get install mpich`) and z3 (following the steps [here] (https://github.com/Z3Prover/z3#building-z3-using-make-and-gccclang)) before configuring.
+Install mpi (`sudo apt-get install mpich`) and z3 (`sudo apt-get install libz3-dev` or following the steps [here] (https://github.com/Z3Prover/z3#building-z3-using-make-and-gccclang)) before configuring.
 
 Follow these steps:
 * `cd Hermes/`

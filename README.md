@@ -23,12 +23,16 @@ This will generate a file called __i\_source-file.cpp__ in the same directory wh
 
 ## 2. Compile and profile
 
+Install mpi (`sudo apt-get install mpich`) and z3 (following the steps [here] (https://github.com/Z3Prover/z3#building-z3-using-make-and-gccclang)) before configuring.
+
 Follow these steps:
 * `cd Hermes/`
 * `./configure`
 * `make`
 * `sudo make install`
 * `cd scheduler`
+
+If `./configure` command can not find mpi.h, try using this command: `./configure --with-mpi-inc-dir=/usr/include/mpich`
 
 Please make sure that you are following the 11th standard of C++ version. If after running `make`, you get some errorsof the form `'to_string' is not a member of 'std'`, then you will have to do some changes in the Makefile of the project. Set the following flags: `-g -O2 -DFIB -std=c++11 -D_GLIBCXX_USE_CXX11_ABI=0` for CFLAGS and CXXFLAGS in the Makefile of the project as well as in the Makefile of the scheduler directory.
 

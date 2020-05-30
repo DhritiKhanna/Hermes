@@ -40,7 +40,7 @@ This should generate _libisp\_prof.so_ in _/usr/local/lib/_.
 
 To generate the profiled executable, run: 
 
-`ispcxx -o executable executable.cpp ../clangTool/GenerateAssumes.cpp ../clangTool/IfInfo.cpp ../profiler/Client.c`
+`ispcxx -o executable executable.cpp ../clangTool/GenerateAssumes.cpp ../clangTool/IfInfo.cpp ../profiler/Client.c` where executable.cpp is your instrumented benchmark file.
 
 ## 3. Execute
 

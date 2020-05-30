@@ -7358,7 +7358,7 @@ else
   lt_cv_ld_exported_symbols_list=no
       save_LDFLAGS=$LDFLAGS
       echo "_main" > conftest.sym
-      LDFLAGS="$LDFLAGS -Wl,-exported_symbols_list,conftest.sym"
+      LDFLAGS="$LDFLAGS -Wl,-exported_symbols_list,conftest.sym -lz3"
       cat confdefs.h - <<_ACEOF >conftest.$ac_ext
 /* end confdefs.h.  */
 
@@ -7377,7 +7377,7 @@ else
 fi
 rm -f core conftest.err conftest.$ac_objext \
     conftest$ac_exeext conftest.$ac_ext
-	LDFLAGS="$save_LDFLAGS"
+	LDFLAGS="$save_LDFLAGS -lz3"
 
 fi
 { $as_echo "$as_me:${as_lineno-$LINENO}: result: $lt_cv_ld_exported_symbols_list" >&5
@@ -8661,7 +8661,7 @@ if ${lt_cv_prog_compiler_static_works+:} false; then :
 else
   lt_cv_prog_compiler_static_works=no
    save_LDFLAGS="$LDFLAGS"
-   LDFLAGS="$LDFLAGS $lt_tmp_static_flag"
+   LDFLAGS="$LDFLAGS $lt_tmp_static_flag -lz3" 
    echo "$lt_simple_link_test_code" > conftest.$ac_ext
    if (eval $ac_link 2>conftest.err) && test -s conftest$ac_exeext; then
      # The linker can only warn and ignore the option if not recognized
@@ -8679,8 +8679,7 @@ else
      fi
    fi
    $RM -r conftest*
-   LDFLAGS="$save_LDFLAGS"
-
+   LDFLAGS="$save_LDFLAGS -lz3"
 fi
 { $as_echo "$as_me:${as_lineno-$LINENO}: result: $lt_cv_prog_compiler_static_works" >&5
 $as_echo "$lt_cv_prog_compiler_static_works" >&6; }
@@ -9648,7 +9647,7 @@ if ${lt_cv_prog_compiler__b+:} false; then :
 else
   lt_cv_prog_compiler__b=no
    save_LDFLAGS="$LDFLAGS"
-   LDFLAGS="$LDFLAGS -b"
+   LDFLAGS="$LDFLAGS -b -lz3"
    echo "$lt_simple_link_test_code" > conftest.$ac_ext
    if (eval $ac_link 2>conftest.err) && test -s conftest$ac_exeext; then
      # The linker can only warn and ignore the option if not recognized
@@ -9666,7 +9665,7 @@ else
      fi
    fi
    $RM -r conftest*
-   LDFLAGS="$save_LDFLAGS"
+   LDFLAGS="$save_LDFLAGS -lz3"
 
 fi
 { $as_echo "$as_me:${as_lineno-$LINENO}: result: $lt_cv_prog_compiler__b" >&5
@@ -11942,7 +11941,7 @@ else
   ac_save_cxx_werror_flag=$ac_cxx_werror_flag
    ac_cxx_werror_flag=yes
    ac_cv_prog_cxx_g=no
-   CXXFLAGS="-g"
+   CXXFLAGS="-g -std=c++11 -D_GLIBCXX_USE_CXX11_ABI=0"
    cat confdefs.h - <<_ACEOF >conftest.$ac_ext
 /* end confdefs.h.  */
 
@@ -11973,7 +11972,7 @@ if ac_fn_cxx_try_compile "$LINENO"; then :
 
 else
   ac_cxx_werror_flag=$ac_save_cxx_werror_flag
-	 CXXFLAGS="-g"
+	 CXXFLAGS="-g -std=c++11 -D_GLIBCXX_USE_CXX11_ABI=0"
 	 cat confdefs.h - <<_ACEOF >conftest.$ac_ext
 /* end confdefs.h.  */
 
@@ -12003,11 +12002,11 @@ elif test $ac_cv_prog_cxx_g = yes; then
   if test "$GXX" = yes; then
     CXXFLAGS="-g -O2 -std=c++11 -D_GLIBCXX_USE_CXX11_ABI=0"
   else
-    CXXFLAGS="-g"
+    CXXFLAGS="-g -std=c++11 -D_GLIBCXX_USE_CXX11_ABI=0"
   fi
 else
   if test "$GXX" = yes; then
-    CXXFLAGS="-O2"
+    CXXFLAGS="-O2 -std=c++11 -D_GLIBCXX_USE_CXX11_ABI=0"
   else
     CXXFLAGS=
   fi

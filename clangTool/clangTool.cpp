@@ -587,7 +587,7 @@ class ExampleVisitor : public RecursiveASTVisitor<ExampleVisitor>
 				}
 
 				//recvFound = ifMPIFunctionPresent(ifS, true);
-				//errs() << "\nrecvfound is : " << recvFound << "\n";
+				errs() << "\nrecvfound is : " << recvFound << "\n";
 
 				// For the 'else' part
 				if(ifS->getElse() != NULL) // there is an else or an else-if

@@ -1,12 +1,12 @@
 CXX = g++
 CFLAGS = -fno-rtti -std=c++11 -D_GLIBCXX_USE_CXX11_ABI=0
 
-LLVM_BIN_PATH = /usr/local/bin
-LLVM_LIBS=/usr/local/lib
-LLVM_CONFIG_COMMAND = $(LLVM_BIN_PATH)/llvm-config --cxxflags --libs core --ldflags --system-libs
-CLANG_BUILD_FLAGS = -I/home/dhriti/clang+llvm-3.8.0-x86_64-linux-gnu-debian8/include \
+LLVM_BIN_PATH = ./clang+llvm-3.8.0-x86_64-linux-gnu-debian8/bin
+LLVM_LIBS = ./clang+llvm-3.8.0-x86_64-linux-gnu-debian8/lib
+LLVM_CONFIG_COMMAND = ./clang+llvm-3.8.0-x86_64-linux-gnu-debian8/bin/llvm-config --libs core --ldflags --system-libs
+CLANG_BUILD_FLAGS = -I./clang+llvm-3.8.0-x86_64-linux-gnu-debian8/include \
 					-I/usr/include/mpi \
-					-L/home/dhriti/clang+llvm-3.8.0-x86_64-linux-gnu-debian8/lib
+					-L./clang+llvm-3.8.0-x86_64-linux-gnu-debian8/lib
 
 CLANGLIBS := \
 	-Wl,--start-group \

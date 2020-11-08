@@ -2,3 +2,7 @@
 *.o
 *.lo
 *.log
+*Case Conflict*
+*.trace
+clangTool/clangTool
+*.m4

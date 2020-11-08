@@ -1,5 +1,8 @@
 # HERMES
 
+Related paper: [Dynamic Symbolic Verification of MPI Programs](https://link.springer.com/chapter/10.1007/978-3-319-95582-7_28)
+Errata: Please see Errata.html
+
 There are three steps to running this tool for checking a program for a deadlock.
 
 1. Instrument the source code.

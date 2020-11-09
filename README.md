@@ -37,9 +37,7 @@ Follow these steps:
 
 If `./configure` command can not find mpi.h, try using this command: `./configure --with-mpi-inc-dir=/usr/include/mpich`
 
-If after make you find references-to-z3-missing errors, please change your Makefile such that `LDFLAGS = -lz3`.
-
-Please make sure that you are following the 11th standard of C++ version. This is highly unlikely, but if after running `make`, you get some errorsof the form `'to_string' is not a member of 'std'`, then you will have to do some changes in the Makefile of the project. Set the following flags: `-g -O2 -DFIB -std=c++11 -D_GLIBCXX_USE_CXX11_ABI=0` for CFLAGS and CXXFLAGS in the Makefile of the project as well as in the Makefile of the scheduler directory.
+If after make you find references-to-z3-missing errors, please check that your Makefile contains `LDFLAGS = -lz3` and you have z3 installed.
 
 This should generate _libisp\_prof.so_ in _/usr/local/lib/_.
 

@@ -889,28 +889,18 @@ void Scheduler::StartMC () {
     //   // }
     // }
 
-    if(Scheduler::_solver.compare("minisat") == 0)
-      slv = static_cast<propt*> (new satcheck_simplifiert);
-    else if (Scheduler::_solver.compare("lingeling") == 0)
-      slv = static_cast<propt*> (new satcheck_lingelingt);
-    else if (Scheduler::_solver.compare("z3") == 0) //dhriti
-      slv = static_cast<propt*> (new satcheck_simplifiert); //dhriti
-    else 
+    if (Scheduler::_solver.compare("z3") == 0) //dhriti 
     {
-      std::cout << "Only minisat and lingeling supported. QUITING!" << std::endl;
+      std::cout << "Only z3 supported. QUITING!" << std::endl;
       ExitMpiProcessAndWait (true);
       exit(0);
     }
 
     if(Scheduler::_encoding == 0)
-    {
-      /*std::cout << "Executing the FM encoding" <<std::endl;
-      fm = new FMEncoding(it, m, slv); 
-      fm->encodingPartialOrders();*/
-      
+    {      
       //dhriti
       std::cout << "\nExecuting the SMT encoding" << std::endl;
-      smt = new SMTEncoding(it, m, slv);
+      smt = new SMTEncoding(it, m);
       bool res;
       smt->encodingPartialOrders();
       smt->encodingConditionals(Scheduler::assertsData, atoi(_num_procs.c_str()));
@@ -959,21 +949,9 @@ void Scheduler::StartMC () {
         exit(0);
       }
     }
-    // else if (Scheduler::_encoding == 1)
-    // {
-    //   std::cout << "Executing the SPO encoding" <<std::endl;
-    //   spo = new SPOEncoding(it, m, slv);
-    //   spo->poEnc();
-    // }
-    // else if (Scheduler::_encoding == 2)
-    // {
-    //   std::cout << "Executing the MultiReceives encoding" <<std::endl;
-    //   opt = new OptEncoding(it, m, slv);
-    //   opt->encodingPartialOrders();
-    // }
     else 
     {
-      std::cout << "ENCODINGTYPE is not set to FMEncoding" <<std::endl;
+      std::cout << "ENCODINGTYPE is not set to SMTEncoding" <<std::endl;
       ExitMpiProcessAndWait (true);
       exit(0);
     }

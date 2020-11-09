@@ -110,8 +110,8 @@ am_isp_exe_OBJECTS = Socket.$(OBJEXT) ServerSocket.$(OBJEXT) \
 	Scheduler.$(OBJEXT) Counter.$(OBJEXT) Transition.$(OBJEXT) \
 	TransitionList.$(OBJEXT) InterleavingTree.$(OBJEXT) \
 	utility.$(OBJEXT) Mo.$(OBJEXT) Wu.$(OBJEXT) Encoding.$(OBJEXT) \
-	SMTEncoding.$(OBJEXT) \
-	MultiReceive.$(OBJEXT) sched-opt.$(OBJEXT) main.$(OBJEXT)
+	SMTEncoding.$(OBJEXT) MultiReceive.$(OBJEXT) \
+	sched-opt.$(OBJEXT) main.$(OBJEXT)
 isp_exe_OBJECTS = $(am_isp_exe_OBJECTS)
 isp_exe_LDADD = $(LDADD)
 AM_V_lt = $(am__v_lt_@AM_V@)
@@ -254,7 +254,6 @@ LIBTOOL_DEPS = @LIBTOOL_DEPS@
 LIPO = @LIPO@
 LN_S = @LN_S@
 LTLIBOBJS = @LTLIBOBJS@
-LT_SYS_LIBRARY_PATH = @LT_SYS_LIBRARY_PATH@
 MAINT = @MAINT@
 MAKEINFO = @MAKEINFO@
 MANIFEST_TOOL = @MANIFEST_TOOL@
@@ -349,11 +348,11 @@ AM_LDFLAGS = -pthread -lz3 $(LIBOPTS_LDADD) $(am__append_1)
 AM_CXXFLAGS = -DHAVE_STDINT_H -Wall $(LIBOPTS_CFLAGS) -g -O2 -DFIB -std=c++11 -D_GLIBCXX_USE_CXX11_ABI=0
 AM_CFLAGS = -DHAVE_STDINT_H -Wall $(LIBOPTS_CFLAGS) -g -O2 -DFIB -std=c++11 -D_GLIBCXX_USE_CXX11_ABI=0
 #//-O2
-INCLUDES = -I ../solver
+INCLUDES = -I ../solver 
 isp_exe_SOURCES = Socket.cpp ServerSocket.cpp MpiProc.cpp Envelope.cpp \
                   name2id.cpp  Scheduler.cpp  Counter.cpp Transition.cpp TransitionList.cpp \
                   InterleavingTree.cpp utility.cpp Mo.cpp Wu.cpp Encoding.cpp SMTEncoding.cpp \
-	          MultiReceive.cpp sched-opt.c main.cpp
+		  MultiReceive.cpp sched-opt.c main.cpp
 
 all: config.hpp
 	$(MAKE) $(AM_MAKEFLAGS) all-am

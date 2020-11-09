@@ -3,26 +3,28 @@
 
 std::stringstream formula;
 
-Encoding::Encoding(ITree *it, M *m, propt *_slv)
+Encoding::Encoding(ITree *it, M *m)
 {
   _m = m;
   _it = it;
   last_node = it->_slist[it->_slist.size() -1] ; 
   traceSize = it->_slist.size()-1;
   _deadlock_found = false;
-  slv = _slv;
-  bvUtils = new bv_utilst(*slv);
+
+  //Dhriti
+  // slv = _slv;
+  // bvUtils = new bv_utilst(*slv);
 
   // instantiating two variables in the solver memory
-  one = slv->new_variable();
-  zero = slv->new_variable();
+  // one = slv->new_variable();
+  // zero = slv->new_variable();
 
   //slv->constraintStream << "one = " << one.get() <<std::endl; 
   //xslv->constraintStream << "zero = " << zero.get() <<std::endl; 
   // setting one to true and zero to false
 
-  slv->l_set_to(one, true);
-  slv->l_set_to(zero, false);
+  // slv->l_set_to(one, true);
+  // slv->l_set_to(zero, false);
  
 }
 

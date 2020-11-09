@@ -34,7 +34,7 @@ class Cover
 class SMTEncoding : public Encoding {
   
 public:
-  SMTEncoding(ITree *it, M *m, propt *_slv): Encoding(it, m, _slv), width(0), eventSize(0) 
+  SMTEncoding(ITree *it, M *m): Encoding(it, m), width(0), eventSize(0) 
   {
     noVars = 1;
     s = new solver(c);

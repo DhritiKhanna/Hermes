@@ -50,7 +50,7 @@ typedef satcheck_minisat_simplifiert satcheck_simplifiert;
 class Encoding{
 public:
   Encoding() {}
-  Encoding(ITree *it, M *m, propt *); 
+  Encoding(ITree *it, M *m); 
   ~Encoding(){}
 
   virtual std::string getLitName(expr a);

@@ -51,10 +51,10 @@
 
 /* svs -- SAT solving begin */
 //#include "Encoding.hpp"
-#include "FMEncoding.hpp"
+// #include "FMEncoding.hpp"
 #include "SMTEncoding.hpp"
-#include "SPOEncoding.hpp"
-#include "OptEncoding.hpp"
+// #include "SPOEncoding.hpp"
+// #include "OptEncoding.hpp"
 #include "utility.hpp"
 #include "stdlib.h"
 // dhriti
@@ -959,21 +959,21 @@ void Scheduler::StartMC () {
         exit(0);
       }
     }
-    else if (Scheduler::_encoding == 1)
-    {
-      std::cout << "Executing the SPO encoding" <<std::endl;
-      spo = new SPOEncoding(it, m, slv);
-      spo->poEnc();
-    }
-    else if (Scheduler::_encoding == 2)
-    {
-      std::cout << "Executing the MultiReceives encoding" <<std::endl;
-      opt = new OptEncoding(it, m, slv);
-      opt->encodingPartialOrders();
-    }
+    // else if (Scheduler::_encoding == 1)
+    // {
+    //   std::cout << "Executing the SPO encoding" <<std::endl;
+    //   spo = new SPOEncoding(it, m, slv);
+    //   spo->poEnc();
+    // }
+    // else if (Scheduler::_encoding == 2)
+    // {
+    //   std::cout << "Executing the MultiReceives encoding" <<std::endl;
+    //   opt = new OptEncoding(it, m, slv);
+    //   opt->encodingPartialOrders();
+    // }
     else 
     {
-      std::cout << "ENCODINGTYPE is not set to either fmEnc or pldiEnc" <<std::endl;
+      std::cout << "ENCODINGTYPE is not set to FMEncoding" <<std::endl;
       ExitMpiProcessAndWait (true);
       exit(0);
     }

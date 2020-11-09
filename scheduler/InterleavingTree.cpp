@@ -32,8 +32,8 @@
 #endif
 
 #include "Encoding.hpp"
-#include "FMEncoding.hpp"
-#include "SPOEncoding.hpp"
+// #include "FMEncoding.hpp"
+// #include "SPOEncoding.hpp"
 #include "assert.h"
 #include "util/threeval.h"
 
@@ -1510,47 +1510,47 @@ int ITree::CHECK (ServerSocket &sock, std::list <int> &l, std::vector<expression
 
 			cbl = n->ample_set.at(choice);
 		}
-		else if(Scheduler::_errorTrace)
-		{
-			// [svs] : addition for the generation of error trace
-			std::vector< std::list<CB> >::iterator ait;
-			bool flag = false;
-			for (ait = n->ample_set.begin() ; ait != n->ample_set.end() ; ait++) 
-			{
-				std::list<CB>::iterator lit; 
-				std::stringstream ss;
-				if(((*ait).size() == 2) &&
-					(n->GetTransition((*ait).front())->GetEnvelope()->isSendType()) &&
-					(n->GetTransition((*ait).back())->GetEnvelope()->isRecvType()) )
-				{
-					for(lit = (*ait).begin(); lit != (*ait).end(); lit++)
-					{
-						ss << (*lit)._pid << (*lit)._index;
-					}
-					std::string matchNumeral = ss.str();
-					literalt s_ab = sch->fm->matchMap.find(matchNumeral)->second;
-					switch(sch->fm->slv->l_get(s_ab).get_value())
-					{
-						case tvt::TV_TRUE:
-								cbl = (*ait);
-								flag = true;
-								break;
-						case tvt::TV_FALSE:
-						case tvt::TV_UNKNOWN:
-								break;
-						default: assert(false);
-					}
-				}
-				if(flag)
-				{
-					break;
-				}
-			}
-			if(!flag)
-			{
-				cbl = n->ample_set.at(choice);
-			}
-		}
+		// else if(Scheduler::_errorTrace)
+		// {
+		// 	// [svs] : addition for the generation of error trace
+		// 	std::vector< std::list<CB> >::iterator ait;
+		// 	bool flag = false;
+		// 	for (ait = n->ample_set.begin() ; ait != n->ample_set.end() ; ait++) 
+		// 	{
+		// 		std::list<CB>::iterator lit; 
+		// 		std::stringstream ss;
+		// 		if(((*ait).size() == 2) &&
+		// 			(n->GetTransition((*ait).front())->GetEnvelope()->isSendType()) &&
+		// 			(n->GetTransition((*ait).back())->GetEnvelope()->isRecvType()) )
+		// 		{
+		// 			for(lit = (*ait).begin(); lit != (*ait).end(); lit++)
+		// 			{
+		// 				ss << (*lit)._pid << (*lit)._index;
+		// 			}
+		// 			std::string matchNumeral = ss.str();
+		// 			literalt s_ab = sch->fm->matchMap.find(matchNumeral)->second;
+		// 			switch(sch->fm->slv->l_get(s_ab).get_value())
+		// 			{
+		// 				case tvt::TV_TRUE:
+		// 						cbl = (*ait);
+		// 						flag = true;
+		// 						break;
+		// 				case tvt::TV_FALSE:
+		// 				case tvt::TV_UNKNOWN:
+		// 						break;
+		// 				default: assert(false);
+		// 			}
+		// 		}
+		// 		if(flag)
+		// 		{
+		// 			break;
+		// 		}
+		// 	}
+		// 	if(!flag)
+		// 	{
+		// 		cbl = n->ample_set.at(choice);
+		// 	}
+		// }
 		else // dhriti: I have made the changes only here because only this (else part) is actually executed
 		{
   		/* == fprs end == */

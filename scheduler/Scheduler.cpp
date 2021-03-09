@@ -111,7 +111,7 @@ int Scheduler::_encoding = 0;
 bool Scheduler::_errorTrace = false;
 bool Scheduler::_dimacs = false;
 bool Scheduler::_formula = false;
-std::string Scheduler::_solver = "";
+std::string Scheduler::_solver = "z3";
 /* svs -- SAT solving end */
 
 char** Scheduler::assertsData = NULL;
@@ -174,7 +174,7 @@ void Scheduler::SetParams (std::string port, std::string num_clients,
 			   std::string solver, int kbuffer
 			   /* svs -- SAT solving end */
 			   ) {//CGD
-solver = "z3"; // dhriti
+  _solver = "z3"; // dhriti
   //solver = "minisat";
   _param_set = true;
   _port = port;

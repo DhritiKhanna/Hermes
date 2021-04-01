@@ -23,6 +23,7 @@
 ProcessIfs* ifs = new ProcessIfs();
 #include "heat.h"
 
+int my_rank;
 /******************************************************
  * Allocate the heatGrid and initialize all variables.
  ******************************************************/
@@ -68,6 +69,14 @@ void heatDeallocate(heatGrid *grid)
 }
 
 /******************************************************
+ * Polynomial function for the initialization a smooth heat profile, 0 <= x <= 1.
+ ******************************************************/
+double heatInitFunc(double x)
+{
+    return (-4.0*x*x*x + 4.0*x*x - 1.0*x + 1.0);
+}
+
+/******************************************************
  * Initialize the grid with some meaninful start values.
  ******************************************************/
 void heatInitialize(heatGrid* grid)
@@ -96,14 +105,6 @@ void heatInitialize(heatGrid* grid)
             }
         }
     }
-}
-
-/******************************************************
- * Polynomial function for the initialization a smooth heat profile, 0 <= x <= 1.
- ******************************************************/
-double heatInitFunc(double x)
-{
-    return (-4.0*x*x*x + 4.0*x*x - 1.0*x + 1.0);
 }
 
 /******************************************************
@@ -336,7 +337,7 @@ void heatMPISetup (int* pargc, char*** pargv, heatGrid *grid, dataMPI* configMPI
 
     /* ==== (1) ==== */
     /* Base init*/
-    MPI_Init (pargc, pargv);int my_rank; MPI_Comm_rank(MPI_COMM_WORLD, &my_rank);
+    MPI_Init (pargc, pargv); MPI_Comm_rank(MPI_COMM_WORLD, &my_rank);
     MPI_Comm_rank (MPI_COMM_WORLD, &configMPI->rank);
     MPI_Comm_size (MPI_COMM_WORLD, &size);
 

@@ -437,22 +437,23 @@ class ExampleVisitor : public RecursiveASTVisitor<ExampleVisitor>
 			ifSGlobal = dyn_cast<IfStmt>(st);
 			if(s.isInMainFile(ifS->getLocStart()))
 			{
-				//llvm::errs() << "Found an If statement at: " << s.getSpellingLineNumber(ifS->getLocStart());
+				//llvm::errs() << "Found an If statement at: " << s.getSpellingLineNumber(ifS->getLocStart()) << "\n";
 				if (const BinaryOperator *binOp = dyn_cast<BinaryOperator>(ifS->getCond()))
 				{
-					if (binOp->getOpcode() == BO_EQ || 
+					/*if (binOp->getOpcode() == BO_EQ || 
 							binOp->getOpcode() == BO_NE ||
 							binOp->getOpcode() == BO_LT ||
 							binOp->getOpcode() == BO_GT ||
 							binOp->getOpcode() == BO_LE ||
-							binOp->getOpcode() == BO_GE)
-					{
+							binOp->getOpcode() == BO_GE)*/
+					//{
 						if (binOp->getOpcode() == BO_EQ) ifData->ops.push_back(bo_eq); 
 						else if (binOp->getOpcode() == BO_NE) ifData->ops.push_back(bo_ne); 
 						else if (binOp->getOpcode() == BO_LT) ifData->ops.push_back(bo_lt);
 						else if (binOp->getOpcode() == BO_GT) ifData->ops.push_back(bo_gt);
 						else if (binOp->getOpcode() == BO_LE) ifData->ops.push_back(bo_le);
 						else if (binOp->getOpcode() == BO_GE) ifData->ops.push_back(bo_ge);
+						else ifData->ops.push_back(bo_ne); // if(e) which is implicity if(e != 0)
 
 						// Extracting LHS
 						const Expr* LHS = binOp->getLHS();
@@ -468,7 +469,7 @@ class ExampleVisitor : public RecursiveASTVisitor<ExampleVisitor>
 							if (const DeclRefExpr* decl = dyn_cast<DeclRefExpr>(LHS))
 							{
 								if(s.isInMainFile(decl->getLocStart()))
-								{ 
+								{
 									string variableName = decl->getNameInfo().getName().getAsString();
 									if( !findByValue(variableNames, variableName) && !findByValue(statusNames, variableName) )
 									{
@@ -502,7 +503,7 @@ class ExampleVisitor : public RecursiveASTVisitor<ExampleVisitor>
 								else return true;
 							}
 							else return true;
-						}
+						//}
 
 						// Extracting RHS (TODO: cast this also into a variable)
 						const Expr* RHS = binOp->getRHS();
